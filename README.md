@@ -2,6 +2,9 @@
 
 ![Platform: macOS](https://img.shields.io/badge/Platform-macOS-lightgrey.svg)
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+![Status: Experimental](https://img.shields.io/badge/Status-Experimental%20%2F%20WIP-yellow.svg)
+
+> **Note:** This project is experimental and a work in progress. It works well for personal use, but expect rough edges. Contributions and feedback welcome!
 
 Automatic text-to-speech for [Claude Code](https://claude.ai/claude-code) responses — reads Claude's answers aloud using macOS `say`, with automatic language detection, markdown cleanup, and a hotkey toggle.
 
