@@ -97,8 +97,8 @@ You can toggle TTS with a keyboard shortcut using the macOS Shortcuts app:
    - **Shell**: `bash`
    - **Input**: `Eingabe` / `Input`
    - **Pass input**: `an stdin` / `to stdin`
-4. Go to **System Settings → Keyboard → Keyboard Shortcuts → App Shortcuts** (or assign directly in Shortcuts.app)
-5. Assign a hotkey (e.g. `⌃⌥T`)
+4. Click the **ⓘ** (info) icon in the top right corner of the shortcut editor
+5. Under **"Run with"**, assign a keyboard shortcut (e.g. `⌃⌥T`)
 
 <img src="docs/shortcut-setup.png" width="600" alt="macOS Shortcuts setup for Claude TTS Toggle">
 
