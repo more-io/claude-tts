@@ -124,8 +124,16 @@ say -v '?'   # list all available voices
 
 ### German voice
 
-Configure the system default voice in:
-**System Settings → Accessibility → Spoken Content → System Voice**
+The best German voices (Siri voices) are **not** selectable via `say -v` — they can only be set as the system default voice:
+
+1. Go to **System Settings → Accessibility → Spoken Content → System Voice**
+2. Click the dropdown and select **German** as language
+3. Download a high-quality voice if not already installed (e.g. "Siri Voice 1" or "Siri Voice 2" — these are optional downloads, ~100-150 MB each)
+4. Set the downloaded Siri voice as system voice
+
+The `say` command without `-v` flag automatically uses whatever system voice you configured here. That's why `speak-response.sh` uses plain `say` for German (no `-v` parameter) — it picks up the Siri voice from system settings.
+
+> **Note**: The built-in non-Siri German voices (Anna, Petra, etc.) are lower quality. Downloading a Siri voice makes a significant difference for German speech output.
 
 ---
 
