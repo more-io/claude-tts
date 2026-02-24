@@ -83,15 +83,23 @@ touch ~/.claude/tts-enabled
 
 That's it — Claude will now speak its responses aloud.
 
-### 4. Optional: Toggle hotkey (macOS)
+### 4. Optional: Toggle hotkey via macOS Shortcuts
 
-Create a macOS Shortcut that runs:
+You can toggle TTS with a keyboard shortcut using the macOS Shortcuts app:
 
-```
-bash ~/.claude/toggle-tts.sh
-```
+1. Open **Shortcuts.app** and create a new shortcut
+2. Name it **Claude TTS Toggle**
+3. Add a **"Run Shell Script"** action with these settings:
+   - **Script**: `~/.claude/toggle-tts.sh`
+   - **Shell**: `bash`
+   - **Input**: `Eingabe` / `Input`
+   - **Pass input**: `an stdin` / `to stdin`
+4. Go to **System Settings → Keyboard → Keyboard Shortcuts → App Shortcuts** (or assign directly in Shortcuts.app)
+5. Assign a hotkey (e.g. `⌃⌥T`)
 
-Assign a keyboard shortcut to it (e.g. `⌃⌥T`). A notification will appear when TTS is toggled on or off.
+<img src="docs/shortcut-setup.png" width="600" alt="macOS Shortcuts setup for Claude TTS Toggle">
+
+A macOS notification ("TTS aktiviert" / "TTS deaktiviert") confirms each toggle.
 
 ---
 
