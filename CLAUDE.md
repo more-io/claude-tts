@@ -6,7 +6,7 @@
 |------|------------|---------|
 | `hooks/speak-response.sh` | `Stop` | Reads Claude's response aloud via `say` |
 | `toggle-tts.sh` | — | Toggles TTS on/off (flag file + notification) |
-| `play-sound.sh` | `UserPromptSubmit` | Plays a macOS system sound |
+| `play-sound.sh` | `UserPromptSubmit`, `PreToolUse` | Plays a macOS system sound |
 
 ## Key Design Decisions
 
@@ -15,6 +15,7 @@
 - **Python cleanup**: Inline Python in the shell script strips markdown, code blocks, URLs, and file paths before passing to `say`. Keeps the script self-contained (no external dependencies beyond Python 3).
 - **Background `say`**: The `say` command runs with `&` so the hook returns immediately and doesn't block Claude Code.
 - **`killall say`**: Previous speech is killed before new speech starts to prevent overlap.
+- **Glass sound on questions**: A `PreToolUse` hook with `matcher: "AskUserQuestion"` plays the Glass sound before Claude presents a question to the user. This is more reliable than a parallel `Bash` tool call, which only executes after the user has already responded.
 
 ## Testing
 
