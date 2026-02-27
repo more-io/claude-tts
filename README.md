@@ -21,7 +21,7 @@ Claude responds → Stop hook fires → language detected → markdown stripped 
 - **German (`DE:`)** — uses the system default voice (configure in System Settings → Accessibility → Spoken Content)
 - **English (`EN:`)** — uses `Evan (Enhanced)` voice (configurable)
 - **Toggle** — `tts-enabled` file acts as on/off flag; hotkey can flip it instantly
-- **Sound notifications** — `play-sound.sh` plays system sounds on events (e.g. Pop when user submits a message)
+- **Sound notifications** — system sounds on events: Pop when user submits a message, Glass when Claude asks a question (`AskUserQuestion`)
 
 ---
 
@@ -70,6 +70,18 @@ Add to `~/.claude/settings.json`:
           {
             "type": "command",
             "command": "bash ~/.claude/play-sound.sh pop"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "AskUserQuestion",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay /System/Library/Sounds/Glass.aiff &",
+            "timeout": 3
           }
         ]
       }
